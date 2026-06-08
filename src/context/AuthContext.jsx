@@ -36,7 +36,6 @@ export const AuthContextProvider = ({ children }) => {
         return () => subscription.unsubscribe();
     }, []);
 
-    // Sign in (Fixed parameters and function name)
     const signInUser = async (email, password) => {
         try {
             const { data, error } = await supabase.auth.signInWithPassword({
@@ -56,7 +55,6 @@ export const AuthContextProvider = ({ children }) => {
         }
     };
 
-    // Sign out (Fixed async/await)
     const signOut = async () => {
         const { error } = await supabase.auth.signOut();
         if (error) {
